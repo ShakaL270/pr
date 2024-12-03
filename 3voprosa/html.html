@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universell design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2e554a; 
+            color: #fff;
+        }
+        header {
+            background-color: #81b6f3;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        section {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            width: 80vw; 
+            margin: 5vh auto; 
+            border-radius: 20px;
+            transition: transform 0.05s, filter 0.3s; 
+            box-sizing: border-box;
+            perspective: 1000px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        section:hover {
+            filter: brightness(0.8);
+        }
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .question-1 {
+            background-color: #d0ffac;
+            color: #660000;
+        }
+        .question-2 {
+            background-color: #000b52;
+            color: #00cbc4;
+        }
+        .question-3 {
+            background-color: #ffa8af; 
+            color: #22543d;       
+        }
+        footer {
+            text-align: center;
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Universell design: Tilgjengelighet for alle</h1>
+    </header>
+    <main>
+        <section class="question-1">
+            <h2>Hva er universell design?</h2>
+            <p>Universell design er et konsept som fokuserer på å skape produkter og tjenester som er tilgjengelige for alle mennesker, uavhengig av deres fysiske eller kognitive evner. Dette inkluderer prinsipper som tilgjengelighet, inkludering og fleksibilitet i bruken, som gjør det mulig for alle mennesker å bruke produkter eller tjenester effektivt.</p>
+        </section>
+        <section class="question-2">
+            <img src="2.png" alt="Bilde for viktighet av tilgjengelighet">
+            <h2>Hvorfor er det viktig å gjøre innhold tilgjengelig for alle brukere?</h2>
+            <p>Tilgjengelig innhold hjelper alle brukere, inkludert personer med funksjonsnedsettelser, med å fullt ut samhandle med digitale plattformer. Det øker inkluderingen og er i samsvar med lovgivningskrav. Å lage tilgjengelig innhold betyr at uavhengig av alder, mentale eller fysiske begrensninger, vil alle kunne bruke ditt produkt eller din tjeneste på like vilkår.</p>
+        </section>
+        <section class="question-3">
+            <img src="3.png" alt="Bilde for Uutilsynet">
+            <h2>Hva er "uutilsynet", og hva er deres hovedoppgaver?</h2>
+            <p>"Uutilsynet" er en norsk statlig etat som overvåker overholdelse av tilgjengelighetsstandarder på nettsteder og andre digitale ressurser. De gjennomfører inspeksjoner og gir råd til organisasjoner om hvordan de kan lage tilgjengelige og inkluderende digitale produkter. Denne organisasjonen hjelper til med å sikre at alle brukere, inkludert personer med funksjonsnedsettelser, kan bruke internettressurser på lik linje med andre.</p>
+        </section>
+    </main>
+    <script>
+        document.querySelectorAll('section').forEach(section => {
+            section.addEventListener('click', () => {
+                const text = section.innerText;
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'no-NO';
+                window.speechSynthesis.speak(utterance);
+            });
+        });
+    </script>
+</body>
+</html>
